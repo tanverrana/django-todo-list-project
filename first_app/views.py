@@ -38,3 +38,8 @@ def edit_task(request, id):
             form.save()
             return redirect('show_task')
     return render(request, 'store_task.html', {'form': form})
+
+
+def delete_task(request, id):
+    task = TaskStoreModel.objects.get(pk=id).delete()
+    return redirect('show_task')
