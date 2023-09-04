@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>This is for test(Show Task)</h1>
 <div style="width: 80%; margin:auto">
-    <h1 class="text-center bg-warning mx-5 p-2">Tasks</h1>
+    <h1 class="text-center bg-warning m-3 p-2 rounded">Tasks</h1>
     {% if data %}
     <table class="table table-striped">
         <thead>
@@ -21,7 +20,11 @@
                 <th scope="row">{{item.id}}</th>
                 <td>{{item.task_name}}</td>
                 <td>{{item.task_description}}</td>
-                <td>{{item.is_completed}}</td>
+                {% if item.is_completed %}
+                <td>Complete</td>
+                {% else %}
+                <td>Incomplete</td>
+                {% endif %}
                 <td> <a href="{%url 'delete_task' id=item.id %}" class="btn btn-danger btn-sm">Delete</a> <a
                         href="{%url 'edit_task' id=item.id %}" class="btn btn-primary btn-sm mx-2">Edit</a><a
                         href="{% url 'complete_task' id=item.id %}" class="btn btn-success btn-sm">Complete</a>

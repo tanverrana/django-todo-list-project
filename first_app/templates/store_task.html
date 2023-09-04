@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div style="width: 50%; margin:auto">
-    <h1 class="text-white bg-primary m-3 text-center">Create Your To Do List!</h1>
+    <h1 class="bg-warning m-3 text-center">Create Your To Do List!</h1>
     <form method="post" method="/show_task">
         {% csrf_token %}
         {{form|crispy}}
