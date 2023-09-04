@@ -51,3 +51,10 @@ def edit_task(request, id):
 def delete_task(request, id):
     task = TaskStoreModel.objects.get(pk=id).delete()
     return redirect('show_task')
+
+
+def complete_task(request, id):
+    task = TaskStoreModel.objects.get(pk=id)
+    task.is_completed = True
+    task.save()
+    return redirect('show_task')

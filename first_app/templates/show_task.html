@@ -23,8 +23,8 @@
                 <td>{{item.task_description}}</td>
                 <td>{{item.is_completed}}</td>
                 <td> <a href="{%url 'delete_task' id=item.id %}" class="btn btn-danger btn-sm">Delete</a> <a
-                        href="{%url 'edit_task' id=item.id %}" class="btn btn-primary btn-sm mx-2">Edit</a><a href=""
-                        class="btn btn-success btn-sm">Complete</a>
+                        href="{%url 'edit_task' id=item.id %}" class="btn btn-primary btn-sm mx-2">Edit</a><a
+                        href="{% url 'complete_task' id=item.id %}" class="btn btn-success btn-sm">Complete</a>
                 </td>
             </tr>
             {% endfor %}
