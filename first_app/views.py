@@ -8,7 +8,15 @@ from first_app.models import TaskStoreModel
 
 
 def home(request):
-    return render(request, 'store_task.html')
+    if request.method == 'POST':
+        task = TaskStoreForm(request.POST)
+        if task.is_valid():
+            task.save()
+            print(task.cleaned_data)
+            return redirect('show_task')
+    else:
+        task = TaskStoreForm()
+    return render(request, 'store_task.html', {'form': task})
 
 
 def store_task(request):

@@ -14,7 +14,7 @@
 
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand text-warning" href="#">TO DO APP</a>
+                <a class="navbar-brand text-warning" href="{% url 'home' %}">TO DO APP</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link text-white" href="">Store Task</a>
+                        <a class="nav-link text-white" href="{% url 'store_task'%}">Store Task</a>
                         <a class="nav-link text-white" href="{% url 'show_task' %}">Show Task</a>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
     <section>
         {% block content %} {% endblock %}
     </section>
-    <h1>This is our base</h1>
+    <!-- <h1>This is our base</h1> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
